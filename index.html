@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download in Progress</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .message {
+            text-align: center;
+        }
+        a {
+            display: none;
+        }
+    </style>
+    <script>
+        function downloadImage() {
+            // Simulate a click on the hidden download link
+            document.getElementById("downloadLink").click();
+        }
+
+        // Trigger the download on page load
+        window.onload = function() {
+            downloadImage();
+
+            // Redirect to the reveal page after 5 seconds
+            setTimeout(function() {
+                window.location.href = "reveal.html";
+            }, 5000);
+        };
+    </script>
+</head>
+<body>
+    <div class="message">
+        <h1>Preparing your download...</h1>
+        <p>Just a moment while we load your content.</p>
+    </div>
+
+    <!-- Hidden download link -->
+    <a id="downloadLink" href="image.png" download="image.png"></a>
+</body>
+</html>
